@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+
+
+<h1>Free Online Simple Quote Post Maker</h1>
+
+    <div class="con">
+
+        <div class="main_con">
+            <div class="editor">
+                <p>
+                    <label for="by">Name Here:</label><br>
+                    <input id="by" type="text" placeholder="Anonymous">
+                </p>
+
+                <p>
+                    <label for="text">Name Here:</label>
+                    <textarea id="text" rows="7"></textarea>
+                </p>
+
+                <p id="logos">
+                    <img onclick='changepro("facebook.png")' src="img/facebook.png " alt=" ">
+                    <img onclick='changepro("instagram.png")' src="img/instagram.png " alt=" ">
+                    <img onclick='changepro("whatsapp.png")' src="img/whatsapp.png " alt=" ">
+                    <img onclick='changepro("man.png ")' src="img/man.png " alt=" ">
+                    <img onclick='changepro("woman.png")' src="img/woman.png " alt=" ">
+                </p>
+
+                <div class="colors ">
+
+                    <p>
+                        <input id="bg-color" type="color" value="#3333333 ">
+                        <label for="bg-color ">bg-color</label>
+                    </p>
+                    
+                    <p>
+                        <button id="bg-image" type="submit" > Image </button>
+                        <label for="bg-image ">bg-image</label>
+                    </p>
+                    <p>
+                        <input id="text-color" type="color" value="#ff0000 ">
+                        <label for="text-color ">Text-color</label>
+
+                    </p>
+                </div>
+
+                <div class="fonts">
+                    <fieldset>
+                        <legend style="color:aliceblue">Fonts</legend>
+
+                        <button onclick="changefont('fira')">Fira</button>
+                        <button onclick="changefont('harma')">Harmattan</button>
+                        <button onclick="changefont('love')">Love</button>
+                        <button onclick="changefont('ubuntu')">Ubuntu</button>
+                    </fieldset>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <div class=" preview ">
+
+                <div class="box ">
+                    <div id="mainimg">
+                        <div id="bywho"> <img id="profile" src="img/facebook.png" alt=""> <span id="who">Anonymous</span></div>
+                        <div id="fulltext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur iure commodi assumenda amet debitis perspiciatis?</div>
+                    </div>
+
+                    <button id="dl-png">Download <img src="img/cloud-computing.png " alt=" "></button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button " href="https://github.com/murtazajoo/post" data-color-scheme="no-preference: light_high_contrast; light: light; dark: dark;" data-icon="octicon-star" data-size="large" aria-label="Star murtazajoo/post on GitHub">Star on GitHub</a>
+
+<small style="color: white;">&copy; murtazajoo</small>
+    <script src="script.js"></script>
+
+    <script src="html2canvas.min.js"></script>
+    <script>
+        document.getElementById("dl-png").onclick = function() {
+            const screenshotTarget = document.getElementById('mainimg');
+            html2canvas(screenshotTarget).then((canvas) => {
+                const base64image = canvas.toDataURL("image/png");
+                var anchor = document.createElement('a');
+                anchor.setAttribute("href", base64image);
+                anchor.setAttribute("download", "my-image.png");
+                anchor.click()
+                anchor.remove()
+            });
+        };
+    </script>
+</body>
+
+</html>
